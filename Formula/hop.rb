@@ -5,45 +5,57 @@
 class Hop < Formula
   desc "CLI tool for connecting to named hosts via SSH, Docker, or Kubernetes"
   homepage "https://github.com/geoffyoungs/hop"
-  version "0.1.0-beta"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/geoffyoungs/hop/releases/download/v0.1.0-beta/hop_0.1.0-beta_darwin_amd64.tar.gz"
-      sha256 "6c04017889405456cb7de3aa6ed3a3e8b61b40343ec8021bdcda4f6f590db4a9"
+      url "https://github.com/geoffyoungs/hop/releases/download/v0.2.2/hop_0.2.2_darwin_amd64.tar.gz"
+      sha256 "8b019eaea527160746914947a0ad07bf605ad97f2434aa2de8f5e1ab86ef82ea"
 
       def install
         bin.install "hop"
         man1.install Dir["docs/man/*.1"]
+        bash_completion.install "completions/hop.bash" => "hop"
+        zsh_completion.install "completions/hop.zsh" => "_hop"
+        fish_completion.install "completions/hop.fish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/geoffyoungs/hop/releases/download/v0.1.0-beta/hop_0.1.0-beta_darwin_arm64.tar.gz"
-      sha256 "09f3ef0c8eec3a416e6cc37a0e96a6d9df51f6208f1851acc4c2aba38be871dc"
+      url "https://github.com/geoffyoungs/hop/releases/download/v0.2.2/hop_0.2.2_darwin_arm64.tar.gz"
+      sha256 "5ab43e152984003a62a5ac1f0abb77b7ad3d9c1d7978b27051d9aa6affe5bb8a"
 
       def install
         bin.install "hop"
         man1.install Dir["docs/man/*.1"]
+        bash_completion.install "completions/hop.bash" => "hop"
+        zsh_completion.install "completions/hop.zsh" => "_hop"
+        fish_completion.install "completions/hop.fish"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/geoffyoungs/hop/releases/download/v0.1.0-beta/hop_0.1.0-beta_linux_amd64.tar.gz"
-      sha256 "0f1618d289b014761135224f7ed6b56c8dbec2959e011a5d514361c03c29858c"
+      url "https://github.com/geoffyoungs/hop/releases/download/v0.2.2/hop_0.2.2_linux_amd64.tar.gz"
+      sha256 "3845d720ae3298869ca495cac471e4e07666db4797d8cf9731e663c1f42a7af6"
       def install
         bin.install "hop"
         man1.install Dir["docs/man/*.1"]
+        bash_completion.install "completions/hop.bash" => "hop"
+        zsh_completion.install "completions/hop.zsh" => "_hop"
+        fish_completion.install "completions/hop.fish"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/geoffyoungs/hop/releases/download/v0.1.0-beta/hop_0.1.0-beta_linux_arm64.tar.gz"
-      sha256 "a631ecb697896e31d6d585711c49b0f803933ad5b891f76c4438a288cee89019"
+      url "https://github.com/geoffyoungs/hop/releases/download/v0.2.2/hop_0.2.2_linux_arm64.tar.gz"
+      sha256 "7a64b8291990cf616f4c1d5c32aca15bec3221988c3b5637165f4765cedd724d"
       def install
         bin.install "hop"
         man1.install Dir["docs/man/*.1"]
+        bash_completion.install "completions/hop.bash" => "hop"
+        zsh_completion.install "completions/hop.zsh" => "_hop"
+        fish_completion.install "completions/hop.fish"
       end
     end
   end
