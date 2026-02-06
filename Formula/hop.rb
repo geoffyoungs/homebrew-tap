@@ -5,13 +5,13 @@
 class Hop < Formula
   desc "CLI tool for connecting to named hosts via SSH, Docker, or Kubernetes"
   homepage "https://github.com/geoffyoungs/hop"
-  version "0.4.0"
+  version "0.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/geoffyoungs/hop/releases/download/v0.4.0/hop_0.4.0_darwin_amd64.tar.gz"
-      sha256 "81a689d44195454f164af2c6e3ad231dc5ce97878c02cc7081ac5aecf0da8ca9"
+      url "https://github.com/geoffyoungs/hop/releases/download/v0.5.0/hop_0.5.0_darwin_amd64.tar.gz"
+      sha256 "223c68dc0e6df817ccfac931055d406a34ae9201e45b11fa60fb0a6f198a7600"
 
       def install
         bin.install "hop"
@@ -22,8 +22,8 @@ class Hop < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/geoffyoungs/hop/releases/download/v0.4.0/hop_0.4.0_darwin_arm64.tar.gz"
-      sha256 "3f6d7104324ea435389fd807e827c7359fe6a8cff04e60fb26d61cd017a4badc"
+      url "https://github.com/geoffyoungs/hop/releases/download/v0.5.0/hop_0.5.0_darwin_arm64.tar.gz"
+      sha256 "96e5eb69833cb1a557d44e96156fb0f4b163427ea55fbbbce2121ecda0d1ab62"
 
       def install
         bin.install "hop"
@@ -37,8 +37,8 @@ class Hop < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/geoffyoungs/hop/releases/download/v0.4.0/hop_0.4.0_linux_amd64.tar.gz"
-      sha256 "d5c7e87e72f58456d7d673aceceb135aa07e803b666c5bded3bb924b05968fb6"
+      url "https://github.com/geoffyoungs/hop/releases/download/v0.5.0/hop_0.5.0_linux_amd64.tar.gz"
+      sha256 "606cc5e94b7371596c253b1201d90b905a986e907195bd0ba1d83dab31b44a16"
       def install
         bin.install "hop"
         man1.install Dir["docs/man/*.1"]
@@ -48,8 +48,8 @@ class Hop < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/geoffyoungs/hop/releases/download/v0.4.0/hop_0.4.0_linux_arm64.tar.gz"
-      sha256 "f9ee54e12644ca34fb72d3ff9d6dc0b1e98c97cf82469bc5f4140e009779bfd0"
+      url "https://github.com/geoffyoungs/hop/releases/download/v0.5.0/hop_0.5.0_linux_arm64.tar.gz"
+      sha256 "5961bcfbad1656af664acf6bd574513e0658ea4be4b27f723ea989aa83c6b22b"
       def install
         bin.install "hop"
         man1.install Dir["docs/man/*.1"]
